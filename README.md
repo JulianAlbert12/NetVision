@@ -1,5 +1,5 @@
 # NetVision
-🕵🏻‍♂️🚨 Insight into Your Network
+Insight into Your Network
 
 ## Authors
 Julian Albert, Cameron Oconnor
