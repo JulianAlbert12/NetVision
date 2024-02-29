@@ -1,0 +1,39 @@
+/* IP-to-decimal.css */
+
+/* Style for the input container */
+.input-container {
+    position: relative;
+  }
+  
+  /* Style for the input field */
+  .input-field {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    font-size: 14px;
+    border-bottom: 3px solid #ccc; /* Add a line underneath */
+    outline: none;
+    transition: border-bottom-color 0.3s; /* Add transition effect for better user experience */
+  }
+  
+  /* Style for the input field when focused */
+  .input-field:focus {
+    border-bottom-color: #2980b9; /* Change color of line when focused */
+  }
+  
+  /* Style for the button */
+  .convert-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .convert-button:hover {
+    background-color: #0056b3; /* Darker shade when hovered */
+  }
+  

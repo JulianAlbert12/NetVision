@@ -1,0 +1,40 @@
+
+body {
+  overflow-x: hidden; 
+}
+
+.App {
+  width: 100vw; 
+  overflow-x: hidden; 
+}
+
+.navbar {
+  background-color: #666;
+  padding: 10px;
+  top: 0; 
+  width: 100%; 
+  z-index: 2;
+}
+
+.navbar-nav {
+  list-style-type: none;
+  padding: 0; 
+  margin: 0;
+}
+
+.nav-item {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.nav-link:hover {
+  background-color: #555;
+}

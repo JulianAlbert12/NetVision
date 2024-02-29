@@ -1,0 +1,6 @@
+.loader-container {
+    display: flex;
+    justify-content: center; /* Horizontally center the loader */
+    align-items: center; /* Vertically center the loader */
+    height: 100%; /* Ensure that the container takes up the full height of its parent */
+}
