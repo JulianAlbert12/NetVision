@@ -7,7 +7,7 @@ import About from './components/About';
 import IPToolsBox from './components/IPTools';
 import IPInfoPage from './pages/IP-info-page';
 import IPdecimalPage from './pages/IP-decimal-page';
-import TestPage from './pages/TestPage';
+import PortScan from './pages/port-scan-page';
 import './App.css';
 
 function App() {
@@ -23,7 +23,8 @@ function App() {
             <About />
             <IPToolsBox />
             <IPToolsBox />
-            <IPToolsBox />
+            <PortScan />
+
             </>
             } />
             <Route path="/about" element={<About />} />

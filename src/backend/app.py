@@ -1,19 +1,45 @@
-from flask import Flask, request, render_template
-import threading
-import your_port_scanner_script  # Assuming your script is modular and can be imported
+from flask import Flask, request, jsonify
+import socket
+from datetime import datetime
 
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return render_template('index.html')  # Create an index.html file in a folder named templates
+def portscan(target):
+    socket.setdefaulttimeout(0.30)
+    discovered_ports = []
+    try:
+        t_ip = socket.gethostbyname(target)
+    except (UnboundLocalError, socket.gaierror):
+        return {"error": "Invalid format. Please use a correct IP or web address"}
+    
+    t1 = datetime.now()
+    for port in range(1, 65536):
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        try:
+            portx = s.connect((t_ip, port))
+            discovered_ports.append(str(port))
+            portx.close()
+        except (ConnectionRefusedError, AttributeError, OSError):
+            pass
 
-@app.route('/scan', methods=['POST'])
-def scan():
-    target = request.form['target']
-    # Assuming your script has a function called 'start_scan' that takes the target and returns results
-    results = your_port_scanner_script.start_scan(target)
-    return render_template('results.html', results=results)  # Display results in another HTML file
+    t2 = datetime.now()
+    total = t2 - t1
+    return {
+        "message": "Port scan completed",
+        "target": t_ip,
+        "discovered_ports": discovered_ports,
+        "duration": str(total)
+    }
+
+@app.route('/scan-ports', methods=['POST'])
+def scan_ports():
+    data = request.get_json()
+    target = data.get('target')
+    if not target:
+        return jsonify({"error": "Target IP address not provided"}), 400
+    
+    result = portscan(target)
+    return jsonify(result)
 
 if __name__ == '__main__':
     app.run(debug=True)
