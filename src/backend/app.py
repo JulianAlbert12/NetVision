@@ -34,7 +34,7 @@ def portscan(target, start_port, end_port):
     return {
         "message": "Port scan completed",
         "target": t_ip,
-        "discovered_ports": discovered_ports,
+        "discovered_ports": ",".join(discovered_ports),  # Join discovered ports into a comma-separated string
         "duration": str(total)
     }
 

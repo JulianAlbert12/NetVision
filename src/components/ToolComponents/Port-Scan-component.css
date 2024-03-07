@@ -1,0 +1,66 @@
+  .port-scanner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8); 
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  }
+  
+  .input-section {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .scan-button {
+    width: 100%;
+    padding: 10px;
+    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 50px;
+  }
+  
+  .scan-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .error-message {
+    color: red;
+    margin-bottom: 10px;
+  }
+  
+  .scan-results {
+    margin-top: 20px;
+  }
+  
+  .scan-results h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .scan-results ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .scan-results li {
+    margin-bottom: 5px;
+  }
+  
+  .scan-results strong {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
