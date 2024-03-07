@@ -6,11 +6,7 @@
   }
   
   /* Style for the input field */
-<<<<<<< HEAD
-  .input-field {
-=======
   .IP-input-field {
->>>>>>> 86dd72b (Port styling added)
     width: 80%;
     padding: 10px;
     border: none;
@@ -21,11 +17,7 @@
   }
   
   /* Style for the input field when focused */
-<<<<<<< HEAD
-  .input-field:focus {
-=======
   .IP-input-field:focus {
->>>>>>> 86dd72b (Port styling added)
     border-bottom-color: #2980b9; /* Change color of line when focused */
   }
   

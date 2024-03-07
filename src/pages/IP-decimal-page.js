@@ -5,11 +5,7 @@ import './pages.css'
 const IPdecimalPage = () => {
     return (
         <div>
-<<<<<<< HEAD
-            <h4>IP to Decimal Converter</h4>
-=======
             <h4 className="page-title">IP to Decimal Converter</h4>
->>>>>>> 86dd72b (Port styling added)
             <IPConverterComponent />
             <div className="summary">
                 <p>An IP to decimal converter converts an IP address to a decimal number. IP addresses are often saved as decimal numbers because they take up only four bytes, compared to 15 bytes for string format IPs.</p>

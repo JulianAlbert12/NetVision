@@ -49,11 +49,7 @@ const IPConverterComponent = () => {
     return (
         <div className="input-container">
             <input
-<<<<<<< HEAD
-                className="input-field"
-=======
                 className="IP-input-field"
->>>>>>> 86dd72b (Port styling added)
                 type="text"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
