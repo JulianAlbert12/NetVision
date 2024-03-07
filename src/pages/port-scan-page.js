@@ -1,12 +1,10 @@
 import React from 'react';
-import Portscan from '../components/ToolComponents/Port-Scan-component';
-import './pages.css'
+import Portscanner from '../components/ToolComponents/Port-Scan-component';
 
 const PortScanPage = () => {
     return (
         <div>
-            <Portscan/>
-        
+            <Portscanner/>
         </div>
     );
 };

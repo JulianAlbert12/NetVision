@@ -23,7 +23,7 @@ const IPToolsBox = () => {
             <span className="text">IP to Decimal</span>
           </div>
         </Link>
-        <Link to="/port-scanner" className="tool-item">
+        <Link to="/port-scan-page" className="tool-item">
           <div className="tool-content">
             Port Scanner
           </div>

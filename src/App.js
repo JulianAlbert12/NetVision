@@ -30,6 +30,8 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/ip-info-page" element={<IPInfoPage />} />
             <Route path="/ip-decimal-page" element={<IPdecimalPage />} />
+            <Route path="/port-scan-page" element={<PortScan />} />
+
           </Routes>
         </div>
         <Footer />

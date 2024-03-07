@@ -7,6 +7,8 @@ const PortScanner = () => {
   const [loading, setLoading] = useState(false);
 
   const handleIPSubmit = async () => {
+    console.log("handleIPSubmit called");
+    console.log("IP Address:", ipAddress); // Log the IP address
     try {
       setLoading(true);
       const response = await fetch('http://127.0.0.1:5000/scan-ports', {
@@ -31,13 +33,16 @@ const PortScanner = () => {
       <h2>Port Scanner</h2>
       <div className="input-section">
         <input
-          type="text"
-          value={ipAddress}
-          onChange={(e) => setIPAddress(e.target.value)}
-          placeholder="Enter IP address"
+            type="text"
+            value={ipAddress}
+            onChange={(e) => {
+                console.log(e.target.value); // Log the input value
+                setIPAddress(e.target.value);
+            }}
+            placeholder="Enter IP address or URL"
         />
         <button onClick={handleIPSubmit} disabled={loading}>
-          {loading ? 'Scanning...' : 'Scan Ports'}
+          {loading ? 'Scanning...' : 'Scan'}
         </button>
       </div>
       {error && <p className="error-message">{error}</p>}
