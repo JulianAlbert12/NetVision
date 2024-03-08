@@ -1,6 +1,21 @@
 import React, { useState } from 'react';
-import LoaderComp from '../../loader'; // Import the LoaderComp component
-import './Port-Scan-component.css'; // Import CSS file for styling
+import LoaderComp from '../../loader'; 
+import './Port-Scan-component.css'; 
+
+const portInfo = [
+  { port: 21, protocol: 'FTP', description: 'File Transfer Protocol' },
+  { port: 22, protocol: 'SSH', description: 'Secure Shell' },
+  { port: 23, protocol: 'Telnet', description: 'Telnet' },
+  { port: 25, protocol: 'SMTP', description: 'Simple Mail Transfer Protocol' },
+  { port: 53, protocol: 'DNS', description: 'Domain Name System' },
+  { port: 80, protocol: 'HTTP', description: 'Hypertext Transfer Protocol' },
+  { port: 110, protocol: 'POP3', description: 'Post Office Protocol version 3' },
+  { port: 143, protocol: 'IMAP', description: 'Internet Message Access Protocol' },
+  { port: 443, protocol: 'HTTPS', description: 'HTTP Secure' },
+  { port: 3389, protocol: 'RDP', description: 'Remote Desktop Protocol' },
+  // Add more ports and their details here...
+];
+
 
 const PortScanner = () => {
   const [ipAddress, setIPAddress] = useState('');
@@ -36,6 +51,22 @@ const PortScanner = () => {
       setLoading(false);
     }
   };
+
+  const getPortDetails = (portNumber) => {
+    return portInfo.find((port) => port.port === parseInt(portNumber));
+  };
+
+  // Helper function to process discovered ports and fetch their details
+  const processDiscoveredPorts = () => {
+    if (scanResults && scanResults.discovered_ports) {
+      // Split the discovered_ports string into an array of numbers
+      const portsArray = scanResults.discovered_ports.split(',').map(Number);
+      return portsArray.map((portNumber) => getPortDetails(portNumber)).filter(Boolean);
+    }
+    return [];
+  };
+
+  const openPortsDetails = processDiscoveredPorts();
 
   return (
     <div className="port-scanner">
@@ -77,16 +108,44 @@ const PortScanner = () => {
       {error && <p className="error-message">{error}</p>}
       {loading && <LoaderComp />} {/* Render the LoaderComp when loading is true */}
       {scanResults && (
-        <div className="scan-results">
-          <h3>Scan Results:</h3>
-          <ul>
-            {Object.entries(scanResults).map(([key, value]) => (
-              <li key={key}>
-                <strong>{key}: </strong> {value}
-              </li>
-            ))}
-          </ul>
-        </div>
+        <>
+          <div className="scan-results">
+            <h3>Scan Summary:</h3>
+            <ul>
+              {Object.entries(scanResults).map(([key, value]) => (
+                <li key={key}>
+                  <strong>{key}: </strong> {value}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {openPortsDetails.length > 0 && (
+            <div className="port-details">
+              <h3>Open Ports Details:</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Port #</th>
+                    <th>Application Layer Protocol</th>
+                    <th>Description</th>
+                    <th>State</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {openPortsDetails.map((details) => (
+                    <tr key={details.port}>
+                      <td>{details.port}</td>
+                      <td>{details.protocol}</td>
+                      <td>{details.description}</td>
+                      <td><img src={`${process.env.PUBLIC_URL}/check.png`} alt="Open" /></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </>
       )}
     </div>
   );

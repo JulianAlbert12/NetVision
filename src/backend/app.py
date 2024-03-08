@@ -32,9 +32,9 @@ def portscan(target, start_port, end_port):
     t2 = datetime.now()
     total = t2 - t1
     return {
+        "target IP": t_ip,
+        "discovered_ports": ", ".join(discovered_ports),  # Join discovered ports into a comma-separated string
         "message": "Port scan completed",
-        "target": t_ip,
-        "discovered_ports": ",".join(discovered_ports),  # Join discovered ports into a comma-separated string
         "duration": str(total)
     }
 

@@ -5,7 +5,7 @@ import './pages.css';
 const PortScanPage = () => {
     return (
         <div>
-            <h4 className="page-title">Port Scanner</h4>
+            <h4 className="page-title">TCP Connect Scan</h4>
            
             <div className="summary">
                 <p>

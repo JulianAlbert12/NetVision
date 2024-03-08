@@ -3,10 +3,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    text-decoration: none;
+
     margin-bottom: 30px;
     margin-top: 10px;
-    width: 100%;
+    width: 85%;
     max-width: 800px;
     border-radius: 25px;
     background-color: rgba(255, 255, 255, 0.8); 
@@ -51,7 +51,7 @@
 
   .tool-link {
     font-size: 25px;
-    word-spacing: 8px;
+    word-spacing: 10px;
     text-decoration: none;
     color: #2980b9; 
 }
