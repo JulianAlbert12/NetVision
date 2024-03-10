@@ -1,0 +1,27 @@
+.faq-question {
+    background-color: #fff;
+    border: none;
+    padding: 15px;
+    padding-left: 20px;
+    width: 90%;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.faq-answer {
+    font-size: 14px;
+    width: 90%;
+    margin-left: 70px;
+    margin-top: 10px;
+    line-height: 2;
+    border-radius: 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.0s ease; 
+}
+
+.faq-answer.open {
+    max-height: 1000px; 
+}

@@ -14,7 +14,7 @@ const IPToolsBox = () => {
         <Link to="/ip-info-page" className="tool-item">
           <div className="tool-content">
             <img src={InformationIcon} alt="Information Icon" className="icon" /> 
-            <span className="text">What's My IP</span>
+            <span className="text">WHOIS Search</span>
           </div>
         </Link>
         <Link to="/IP-decimal-page" className="tool-item">

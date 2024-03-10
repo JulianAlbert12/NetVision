@@ -1,0 +1,4 @@
+# Nmap 7.94 scan initiated Sun Mar 10 13:17:31 2024 as: nmap -p21,22,25,53,80 -sV -sC -T4 -Pn -oA www.hagelsupply.com www.hagelsupply.com
+Host: 65.60.35.198 (chir115.websitehostserver.net)	Status: Up
+Host: 65.60.35.198 (chir115.websitehostserver.net)	Ports: 21/open/tcp//ftp//Pure-FTPd/, 22/open/tcp//ssh//OpenSSH 7.4 (protocol 2.0)/, 25/open/tcp//smtp?///, 53/open/tcp//domain//(unknown banner: [SECURED])/, 80/open/tcp//http///
+# Nmap done at Sun Mar 10 13:21:35 2024 -- 1 IP address (1 host up) scanned in 244.41 seconds
