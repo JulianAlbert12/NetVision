@@ -11,21 +11,35 @@
   }
   
   .input-section {
+    width: 100%;
     display: flex;
     flex-direction: column;
   }
   
-  .input-field {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
+  .input-ip-url {
+    flex-grow: 1;
+  }
+  
+  .port-range-inputs {
+    display: flex;
+    justify-content: space-between; 
+    margin-top: 3px; 
+  }
+  
+  .input-field,
+  .scan-button {
+    margin-top: 10px; 
+    border: 2px solid #f2f2f2;
     border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .port-input {
+    flex-basis: calc(52% - 50px); /* Adjusted width for each port input to accommodate margin */
   }
   
   .scan-button {
-    width: 100%;
-    padding: 10px;
+    padding: 15px;
     background-image: linear-gradient(to bottom, #3498db, #2980b9);
     color: #fff;
     border: none;
@@ -43,6 +57,16 @@
     color: red;
     margin-bottom: 10px;
   }
+
+
+
+
+
+
+
+
+
+
 
   
   .scan-results {
