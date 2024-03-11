@@ -70,7 +70,7 @@ const PortScanPage = () => {
                 <p><strong>3.</strong> Specify the timeout duration, in seconds, for each port check.</p>
                 <img src={TimeoutImage} alt="Timeout" style={{ width: '45%', marginLeft: '50px', }} />
                 <ul>
-                    <li>Port Scan Timeout: How long (in seconds) the port scan will try before giving up </li>
+                    <li>Port Scan Timeout: How long (in seconds) the port scan will try before giving up. </li>
                     <li>A high timeout can prevent the scanner from giving up too quickly.</li>
                     <li>A "Connection timed out" error indicates that the server didn't respond to the client and the client program gave up.</li>
                 </ul>

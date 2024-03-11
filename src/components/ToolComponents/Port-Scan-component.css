@@ -2,7 +2,7 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 80px;
-    width: 55%;
+    width: 85%;
     font-size: 16px;
     border-radius: 25px;
     background-color: rgba(255, 255, 255, 0.8); 
@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
   }
-  
+
   .input-section {
     width: 100%;
     display: flex;
@@ -59,17 +59,6 @@
     color: red;
     margin-bottom: 10px;
   }
-
-
-
-
-
-
-
-
-
-
-
   
   .scan-results {
     margin-top: 20px;
@@ -90,7 +79,6 @@
   .scan-results li {
     margin-bottom: 10px;
     font-size: 16px;
-
   }
   
   .scan-results strong {
@@ -121,7 +109,8 @@
   }
 
   .port-details th {
-    background-color: #bcbcbc; /* Add a background color to the table header */
+    color: white;
+    background-color: #297fb9fe; /* Add a background color to the table header */
   }
 
   .port-details img {

@@ -1,25 +1,40 @@
 import React, { useState } from 'react';
 import LoaderComp from '../../loader'; 
+import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
 import './Port-Scan-component.css'; 
 
-
 const portInfo = [
-  { port: 21, protocol: 'FTP', description: 'File Transfer Protocol' },
-  { port: 22, protocol: 'SSH', description: 'Secure Shell' },
-  { port: 23, protocol: 'Telnet', description: 'Telnet' },
-  { port: 25, protocol: 'SMTP', description: 'Simple Mail Transfer Protocol' },
-  { port: 53, protocol: 'DNS', description: 'Domain Name System' },
-  { port: 80, protocol: 'HTTP', description: 'Hypertext Transfer Protocol' },
-  { port: 110, protocol: 'POP3', description: 'Post Office Protocol version 3' },
-  { port: 143, protocol: 'IMAP', description: 'Internet Message Access Protocol' },
-  { port: 443, protocol: 'HTTPS', description: 'HTTP Secure' },
-  { port: 465, protocol: 'SMTP', description: 'SMTP over SSL' },
-  { port: 1723, protocol: 'PPTP', description: 'Point-to-Point Tunneling Protocol' },
-  { port: 2000, protocol: 'CISCO-SRVS', description: 'Cisco SCCP (Skinny) Server' },
-  { port: 3389, protocol: 'RDP', description: 'Remote Desktop Protocol' },
-  { port: 8291, protocol: 'Winbox', description: ''}
+  { port: 21, protocol: 'FTP', description: 'File Transfer Protocol', risk: 'High',
+    attacks: 'brute-force, anonymous authentication, cross-site scripting, directory traversal attacks', recomendation: 'Disable always. Use SSHv2 or deploy the O&M audit system.' },
+  { port: 22, protocol: 'SSH', description: 'Secure Shell', risk: 'Medium', 
+    attacks: 'brute-force, leaked SSH keys', recomendation: 'Disable recommended. If the port must be used, use SSHv2 and strong authentication.' },
+  { port: 23, protocol: 'Telnet', description: 'Telnet', risk: 'High', 
+    attacks: 'credential brute-forcing, spoofing and credential sniffing, etc.', recomendation: 'Disable always. Use SSHv2 or deploy the O&M audit system.' },
+  { port: 25, protocol: 'SMTP', description: 'Simple Mail Transfer Protocol', risk: 'High',
+    attacks: 'spoofing, spamming', recomendation: 'Disable always. Use SMTPS instead.' },
+  { port: 53, protocol: 'DNS', description: 'Domain Name System', risk: 'Medium',
+    attacks: 'DDoS attack', recomendation: 'Disable always.' },
+  { port: 80, protocol: 'HTTP', description: 'Hypertext Transfer Protocol', risk: 'High',
+    attacks: 'cross-site scripting, SQL injections, cross-site request forgeries and DDoS attacks', recomendation: 'Disable recommended. Use HTTPS instead.' },
+  { port: 110, protocol: 'POP3', description: 'Post Office Protocol version 3', risk: 'High',
+    attacks: 'MitM, spoofing attacksw', recomendation: 'Disable always. Use POP3S instead.' },
+  { port: 143, protocol: 'IMAP', description: 'Internet Message Access Protocol', risk: 'High',
+    attacks: 'sniffing, spam/phishing, MitM, brute force, DoS', recomendation: 'Disable always. Use IMAPS instead.' },
+  { port: 443, protocol: 'HTTPS', description: 'HTTP Secure', risk: 'Low',
+    attacks: 'MitM, SQL injections, DDoS, cross-site forgery', recomendation: 'Disable recommended if unused, considered a secure port.' },
+  { port: 465, protocol: 'SMTP', description: 'SMTP over SSL', risk: 'Medium',
+    attacks: 'spoofed attack, DoS', recomendation: 'Disable recommended. Use startTLS instead' },
+  { port: 587, protocol: 'SMTPS', description: 'SMTP with TLS and STARTTLS', risk: 'Low',
+    attacks: 'DDoS', recomendation: 'Considered to be a secure port.' },
+  { port: 1723, protocol: 'PPTP', description: 'Point-to-Point Tunneling Protocol', risk: 'High',
+    attacks: 'MitM, bit-flipping, DoS, PoC exploit', recomendation: 'Disable recomended.' },
+  { port: 2000, protocol: 'CISCO-SRVS', description: 'Cisco SCCP (Skinny) Server', risk: 'Medium',
+    attacks: 'DoS', recomendation: 'Use with caution and secure properly.' },
+  { port: 3389, protocol: 'RDP', description: 'Remote Desktop Protocol', risk: 'High',
+    attacks: 'session hijacking, on-path attacks, install malware', recomendation: 'Disable always. RDP majority of cyber attacks.' },
+  { port: 8291, protocol: 'Winbox', description: 'Administer MikroTik RouterOS devices.', risk: 'High',
+    attacks: 'unauthenticated remote attacker', recomendation: 'Disable recommended if unused.'}
 ];
-
 
 
 const PortScanner = () => {
@@ -35,7 +50,6 @@ const PortScanner = () => {
     console.log("handleIPSubmit called");
     console.log("IP Address:", ipAddress); // Log the IP address
   
-    // Clear previous scan results
     setScanResults(null);
     setError(null);
   
@@ -64,9 +78,9 @@ const PortScanner = () => {
 
   // Helper function to process discovered ports and fetch their details
   const processDiscoveredPorts = () => {
-    if (scanResults && scanResults.discovered_ports) {
-      // Split the discovered_ports string into an array of numbers
-      const portsArray = scanResults.discovered_ports.split(',').map(Number);
+    if (scanResults && scanResults.ports) {
+      // Split the ports string into an array of numbers
+      const portsArray = scanResults.ports.split(',').map(Number);
       return portsArray.map((portNumber) => getPortDetails(portNumber)).filter(Boolean);
     }
     return [];
@@ -74,8 +88,23 @@ const PortScanner = () => {
 
   const openPortsDetails = processDiscoveredPorts();
 
+  const riskDistribution = { High: 0, Medium: 0, Low: 0 };
+  openPortsDetails.forEach(port => {
+    if (port.risk) {
+      riskDistribution[port.risk]++;
+    }
+  });
+
+  const COLORS = { High: '#ff4949', Medium: '#ffbb28', Low: '#00C49F' };
+  const data = [
+    { name: 'High Risk', value: riskDistribution.High },
+    { name: 'Medium Risk', value: riskDistribution.Medium },
+    { name: 'Low Risk', value: riskDistribution.Low },
+  ];
+
   return (
       <div className="port-scanner">
+        <p>Fill out all sections. Click <span onClick={() => document.getElementById('end-of-page').scrollIntoView({ behavior: 'smooth' })}><u>here</u></span> for help.</p>
         <div className="input-section">
           <input
             type="text"
@@ -145,7 +174,7 @@ const PortScanner = () => {
               <table>
                 <thead>
                   <tr>
-                    <th>Port #</th>
+                    <th>Port</th>
                     <th>State</th>
                     <th>Application Layer Protocol</th>
                     <th>Description</th>
@@ -166,7 +195,50 @@ const PortScanner = () => {
           )}
         </>
       )}
+
+      {openPortsDetails.length > 0 && (
+        <div className="port-details">
+          <hr style={{ margin: '30px auto', width: '100%' }} />
+          <h3>Vulnerability Recommendations:</h3>
+          <table>
+            <thead>
+              <tr>
+                <th style={{ backgroundColor: '#fa060699' }}>Port </th>
+                <th style={{ backgroundColor: '#fa060699' }}>Prone Attacks</th>
+                <th style={{ backgroundColor: '#fa060699' }}>Risk</th>
+                <th style={{ backgroundColor: '#fa060699' }}>Recommendation</th>
+              </tr>
+            </thead>
+            <tbody>
+              {openPortsDetails.map((details) => (
+                <tr key={details.port}>
+                  <td>{details.port}</td>
+                  <td>{details.attacks}</td>
+                  <td>{details.risk}</td>
+                  <td>{details.recomendation}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+            <PieChart width={400} height={400}>
+              <Pie data={data} cx="50%" cy="50%" outerRadius={100} fill="#8884d8" dataKey="value" label>
+                {data.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[entry.name.split(' ')[0]]} />
+                ))}
+              </Pie>
+              <Tooltip />
+            </PieChart>
+          </div>
+        </div>
+      )}
+
+
+
+      <div id="end-of-page" /> 
     </div>
+
   );
 };
 

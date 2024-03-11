@@ -9,7 +9,7 @@ CORS(app)
 def portscan(target, start_port, end_port, timeout):
     print("Received:", target)
     socket.setdefaulttimeout(float(timeout))  # Set the socket timeout    
-    discovered_ports = []
+    ports = []
     try:
         t_ip = socket.gethostbyname(target)
         print("Resolved IP address:", t_ip)  
@@ -22,7 +22,7 @@ def portscan(target, start_port, end_port, timeout):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         try:
             portx = s.connect((t_ip, port))
-            discovered_ports.append(str(port))
+            ports.append(str(port))
             s.close()
             print("Port", port, "is open")  # Log if a port is open
         except (ConnectionRefusedError, AttributeError, OSError):
@@ -33,7 +33,7 @@ def portscan(target, start_port, end_port, timeout):
     total = t2 - t1
     return {
         "target IP": t_ip,
-        "discovered_ports": ", ".join(discovered_ports),  # Join discovered ports into a comma-separated string
+        "ports": ", ".join(ports),  # Join discovered ports into a comma-separated string
         "message": "Port scan completed",
         "duration": str(total)
     }
