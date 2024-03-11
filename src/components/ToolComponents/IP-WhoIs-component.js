@@ -5,7 +5,7 @@ import LoaderComp from '../../loader';
 
 const IPInfoComponent = () => {
     const [ipInfo, setIpInfo] = useState(null);
-    const [loading, setLoading] = useState(true); // Add loading state
+    const [loading, setLoading] = useState(true);
     const [userAgent, setUserAgent] = useState('');
     const [operatingSystem, setOperatingSystem] = useState('');
     const [browser, setBrowser] = useState('');
@@ -15,32 +15,29 @@ const IPInfoComponent = () => {
             try {
                 const response = await axios.get('https://api.ipify.org?format=json');
                 const clientIP = response.data.ip;
-                // Now you have the client's IP address, you can use it to fetch more information
+
                 const infoResponse = await axios.get(`http://free.ipwhois.io/json/${clientIP}`);
                 setIpInfo(infoResponse.data);
-                setLoading(false); // Set loading to false when data is fetched
+                setLoading(false); 
             } catch (error) {
                 console.error('Error fetching IP info:', error);
-                setLoading(false); // Set loading to false in case of error
+                setLoading(false); 
             }
         };
 
         fetchIPInfo();
 
-        // Get user agent when component mounts
         setUserAgent(navigator.userAgent);
     }, []);
 
     useEffect(() => {
-        // Extract operating system from user agent string
-        const osRegex = /(Windows|Macintosh|Linux)/i; // Regular expression to match common operating systems
+        const osRegex = /(Windows|Macintosh|Linux)/i; 
         const osMatch = userAgent.match(osRegex);
         if (osMatch) {
             setOperatingSystem(osMatch[0]);
         }
 
-        // Extract browser from user agent string
-        const browserRegex = /(Chrome|Firefox|Safari|Edge|Opera)/i; // Regular expression to match common browsers
+        const browserRegex = /(Chrome|Firefox|Safari|Edge|Opera)/i; 
         const browserMatch = userAgent.match(browserRegex);
         if (browserMatch) {
             setBrowser(browserMatch[0]);
@@ -50,14 +47,14 @@ const IPInfoComponent = () => {
     return (
         <div className="ip-info-container">
             {loading ? (
-                <LoaderComp /> // Render LoaderComp while loading
+                <LoaderComp /> 
             ) : (
                 <>
                     <div className="ip-info-column">
                         <ul className="ip-info-chart">
                             <li className="ip-info-layer">
                                 <span>IP:</span>
-                                <span>{ipInfo.ip}</span>
+                                <div className='IP'><span>{ipInfo.ip}</span> </div>
                             </li>
                             <li className="ip-info-layer">
                                 <span>Type:</span>

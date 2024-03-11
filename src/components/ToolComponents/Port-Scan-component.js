@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import LoaderComp from '../../loader'; 
 import './Port-Scan-component.css'; 
 
+
 const portInfo = [
   { port: 21, protocol: 'FTP', description: 'File Transfer Protocol' },
   { port: 22, protocol: 'SSH', description: 'Secure Shell' },
@@ -13,15 +14,19 @@ const portInfo = [
   { port: 143, protocol: 'IMAP', description: 'Internet Message Access Protocol' },
   { port: 443, protocol: 'HTTPS', description: 'HTTP Secure' },
   { port: 465, protocol: 'SMTP', description: 'SMTP over SSL' },
+  { port: 1723, protocol: 'PPTP', description: 'Point-to-Point Tunneling Protocol' },
+  { port: 2000, protocol: 'CISCO-SRVS', description: 'Cisco SCCP (Skinny) Server' },
   { port: 3389, protocol: 'RDP', description: 'Remote Desktop Protocol' },
-  // Add more ports and their details here...
+  { port: 8291, protocol: 'Winbox', description: ''}
 ];
+
 
 
 const PortScanner = () => {
   const [ipAddress, setIPAddress] = useState('');
   const [startPort, setStartPort] = useState();
   const [endPort, setEndPort] = useState();
+  const [timeout, setTimeout] = useState('');
   const [scanResults, setScanResults] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -41,7 +46,7 @@ const PortScanner = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ target: ipAddress, start_port: startPort, end_port: endPort }),
+        body: JSON.stringify({ target: ipAddress, start_port: startPort, end_port: endPort, timeout: timeout}),
       });
       const data = await response.json();
       setScanResults(data);
@@ -104,6 +109,17 @@ const PortScanner = () => {
               className="input-field port-input" // Apply CSS class for styling
             />
           </div>
+          <input
+            type="number"
+            value={timeout}
+            onChange={(e) => {
+              console.log(e.target.value); // Log the input value
+              setTimeout(e.target.value);
+            }}
+            placeholder="Timeout (in seconds)"
+            className="input-field" // Apply CSS class for styling
+          />
+
           <button onClick={handleIPSubmit} disabled={loading} className="scan-button">
             {loading ? 'Scanning...' : 'Scan'}
           </button>

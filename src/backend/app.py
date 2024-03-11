@@ -6,9 +6,9 @@ from datetime import datetime
 app = Flask(__name__)
 CORS(app)
 
-def portscan(target, start_port, end_port):
+def portscan(target, start_port, end_port, timeout):
     print("Received:", target)
-    socket.setdefaulttimeout(0.10)
+    socket.setdefaulttimeout(float(timeout))  # Set the socket timeout    
     discovered_ports = []
     try:
         t_ip = socket.gethostbyname(target)
@@ -52,7 +52,7 @@ def scan_ports():
     if not target:
         return jsonify({"error": "Target IP address not provided"}), 400
     
-    result = portscan(target, start_port, end_port)
+    result = portscan(target, start_port, end_port, data.get('timeout'))
     print("Sending response:", result)  # Log the response being sent
     return jsonify(result)
 

@@ -8,7 +8,7 @@
 .ip-info-column {
   box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
   border-radius: 25px;
-  width: 75%; /* Adjusted width for each column */
+  width: 100%; /* Adjusted width for each column */
   display: inline-block;
   vertical-align: top; /* Align columns to the top */
   padding: 30px; /* Adjusted padding */
@@ -23,12 +23,17 @@
 
 .ip-info-layer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Push content to both ends */
   align-items: center;
   margin-bottom: 10px; /* Adjust spacing between layers */
 }
 
 .ip-info-layer span:first-child {
   font-weight: bold;
-  width: 150px; /* Adjust width of the first column */
 }
+
+.copy-icon {
+  width: 15px;
+  margin-left: 10px;
+}
+

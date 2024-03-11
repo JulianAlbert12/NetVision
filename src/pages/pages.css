@@ -11,11 +11,21 @@
     font-size: 16px;
     color: #333;
     text-align: left;
-    margin: 80px 20px;
-    line-height: 1.5;
+    margin: 50px 50px;
+    line-height: 2;
   }
   
   .FAQ {
     text-align: center;
     margin-bottom: 15px;
+  }
+
+  .highlighted-ip {
+    background-color: #33333324;
+    color: black;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 2px;
+    font-style: Verdana;
+    font-weight: 500;
   }
