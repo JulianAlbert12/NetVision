@@ -33,24 +33,6 @@ const PortScanPage = () => {
     return (
         <div>
             <h4 className="page-title">TCP Connect Scan</h4>
-           
-            <div className="summary">
-                <p>
-                    Port scanners are tools used in networking and cybersecurity to discover which ports are open on a target system. Ports are virtual endpoints for communication in networked environments, and understanding which ports are open can provide valuable insights into the security and accessibility of a system.
-                </p>
-                <h5>Uses of Port Scanners</h5>
-                <ul>
-                    <li>
-                        <strong>Security Assessment:</strong> Port scanners are commonly used by cybersecurity professionals to assess the security posture of a network or system. By identifying open ports, security vulnerabilities can be uncovered and addressed proactively.
-                    </li>
-                    <li>
-                        <strong>Network Administration:</strong> Network administrators use port scanners to monitor and manage network resources. They can detect unauthorized services running on network devices and ensure that only necessary ports are open.
-                    </li>
-                    <li>
-                        <strong>Penetration Testing:</strong> Ethical hackers and penetration testers utilize port scanners to simulate cyber attacks and identify potential entry points into a system. By scanning for open ports, they can assess the effectiveness of security measures and recommend improvements.
-                    </li>
-                </ul>
-            </div>
             <PortScanner />
             <h5 className='FAQ'>Instructions</h5>
             <div className="summary">
@@ -74,7 +56,40 @@ const PortScanPage = () => {
                     <li>A high timeout can prevent the scanner from giving up too quickly.</li>
                     <li>A "Connection timed out" error indicates that the server didn't respond to the client and the client program gave up.</li>
                 </ul>
+            </div>
 
+
+            <h5 className='FAQ'>Results</h5>
+            <div className="summary">
+                <p>The risk levels for these ports were determined based on several factors that include the protocol's security features, common vulnerabilities, the frequency and impact of known attacks, and the best practices for their use and management. Here's a breakdown of the rationale:</p>
+                <p><strong>Common Vulnerabilities and Exploits (CVEs):</strong> Ports and protocols with a high number of CVEs, particularly those that allow remote code execution or unauthorized access, are rated higher in risk.</p>
+                <p><strong>Protocol Security Features:</strong> Protocols lacking encryption or those that transmit data in clear text (e.g., FTP, Telnet) are considered high risk due to the ease of interception and manipulation of the data they transmit.</p>
+                <p><strong>Frequency of Attacks:</strong> Some protocols are more commonly targeted by attackers due to their widespread use and the valuable data they can provide access to. For example, RDP (Remote Desktop Protocol) has been a popular target for ransomware attacks.</p>
+                <p><strong>Impact of Exploitation:</strong> The potential damage or impact of an attack can elevate the risk level. For example, exploits that allow an attacker to gain control of an email server (via SMTP) can lead to significant breaches of confidentiality and integrity.</p>
+                <p><strong>Best Practices and Recommendations:</strong>  Security best practices and industry recommendations often suggest disabling or replacing protocols known to be insecure (e.g., replacing HTTP with HTTPS).</p>
+                <p><strong>Default Configuration and Authentication Strength:</strong>  Services that by default have weak authentication mechanisms or are commonly left in a poorly secured state increase the risk level due to the higher likelihood of successful exploitation.</p>
+                <p>Given these considerations:</p>
+                <ul>
+                    <li><strong>High Risk: </strong>Ports associated with protocols that are outdated, lack encryption, or are frequently targeted by attackers due to widespread use and critical vulnerabilities.</li>
+                    <li><strong>Medium Risk: </strong>Ports for protocols that have some form of security but still have known vulnerabilities or weaker forms of authentication, making them somewhat easier targets.</li>
+                    <li><strong>Low Risk: </strong> Ports associated with protocols that implement strong security measures by default, including encryption and secure authentication methods, and have fewer known vulnerabilities.</li>
+                </ul>
+                <p>It's important to note that this assessment can evolve over time as new vulnerabilities are discovered, patches are released, and security practices are updated. Also, the context in which a service is deployed (such as its exposure to the internet, internal network segmentation, and other mitigating controls) can significantly affect the actual risk level.</p>
+            </div>
+
+            
+            <h5 className='FAQ'>Steps to Mitigate Risks from Open Ports</h5>
+            <div className="summary">
+            <ol>
+                <li><strong>Close Unnecessary Ports:</strong> If possible, close any open ports that are not essential for the operation of the system or service. This reduces the attack surface and limits potential entry points for attackers.</li>
+                <li><strong>Patch and Update:</strong> Ensure that all software, operating systems, and services running on the system are up to date with the latest security patches and updates. Vulnerabilities in outdated software can be exploited by attackers.</li>
+                <li><strong>Implement Access Controls:</strong> Restrict access to open ports by implementing appropriate access controls such as firewalls, network segmentation, and strong authentication mechanisms. Only allow traffic to open ports from trusted sources.</li>
+                <li><strong>Harden Configuration:</strong> Configure services running on open ports securely by following best practices and security guidelines. This may involve disabling unnecessary features, using secure encryption protocols, and enabling logging and monitoring.</li>
+                <li><strong>Monitor and Audit:</strong> Implement continuous monitoring and auditing of network traffic, system logs, and security events to detect and respond to any suspicious activity or attempted attacks targeting open ports.</li>
+                <li><strong>Implement Intrusion Detection and Prevention Systems (IDPS):</strong> Deploy IDPS solutions to detect and block malicious network traffic targeting open ports in real-time. These systems can help identify and mitigate attacks more effectively.</li>                
+                <li><strong>Regularly Conduct Security Assessments:</strong> Perform regular security assessments, including vulnerability scanning and penetration testing, to identify and address any new vulnerabilities or misconfigurations that may arise over time.</li>                
+                <li><strong>Educate Users:</strong> Educate users and administrators about the risks associated with open ports and provide training on security best practices, such as avoiding opening unnecessary ports and recognizing potential security threats.</li>
+            </ol>
 
             </div>
 

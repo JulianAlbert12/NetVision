@@ -46,6 +46,16 @@ const PortScanner = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
+  const handleNewScan = () => {
+    setIPAddress('');
+    setStartPort('');
+    setEndPort('');
+    setTimeout('');
+    setScanResults(null);
+    setError(null);
+    setLoading(false);
+  };
+  
   const handleIPSubmit = async () => {
     console.log("handleIPSubmit called");
     console.log("IP Address:", ipAddress); // Log the IP address
@@ -95,7 +105,7 @@ const PortScanner = () => {
     }
   });
 
-  const COLORS = { High: '#ff4949', Medium: '#ffbb28', Low: '#00C49F' };
+  const COLORS = { High: '#C21807', Medium: '#ffbb28', Low: '#03C04A' };
   const data = [
     { name: 'High Risk', value: riskDistribution.High },
     { name: 'Medium Risk', value: riskDistribution.Medium },
@@ -203,10 +213,10 @@ const PortScanner = () => {
           <table>
             <thead>
               <tr>
-                <th style={{ backgroundColor: '#fa060699' }}>Port </th>
-                <th style={{ backgroundColor: '#fa060699' }}>Prone Attacks</th>
-                <th style={{ backgroundColor: '#fa060699' }}>Risk</th>
-                <th style={{ backgroundColor: '#fa060699' }}>Recommendation</th>
+                <th style={{ backgroundColor: '#C21807' }}>Port </th>
+                <th style={{ backgroundColor: '#C21807' }}>Prone Attacks</th>
+                <th style={{ backgroundColor: '#C21807' }}>Risk</th>
+                <th style={{ backgroundColor: '#C21807' }}>Recommendation</th>
               </tr>
             </thead>
             <tbody>
@@ -228,17 +238,20 @@ const PortScanner = () => {
                   <Cell key={`cell-${index}`} fill={COLORS[entry.name.split(' ')[0]]} />
                 ))}
               </Pie>
-              <Tooltip />
+              <Tooltip/>
+              <Legend />
             </PieChart>
           </div>
+          <h3>Results:</h3>
+          <p>The risk levels for these ports were determined based on several factors that include the protocol's security features, common vulnerabilities, the frequency and impact of known attacks, and the best practices for their use and management. </p>
+          <p>Click <span onClick={() => document.getElementById('end-of-page').scrollIntoView({ behavior: 'smooth' })}><u>here</u></span> for more information.</p>              
+          <button onClick={handleNewScan} className="reset-button">Reset</button>
         </div>
       )}
 
 
-
-      <div id="end-of-page" /> 
-    </div>
-
+    <div id="end-of-page" /> 
+  </div>
   );
 };
 

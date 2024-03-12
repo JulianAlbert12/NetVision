@@ -1,9 +1,10 @@
   /* Styles for page content */
   .summary {
-    font-size: 16px;
+    font-size: 14px;
     color: #333;
     text-align: left;
     margin: 80px 20px;
     line-height: 1.5;
+    max-width: 75%;
   }
   
