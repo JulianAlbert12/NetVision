@@ -1,10 +1,14 @@
   /* Styles for page content */
-  .summary {
+  .about-container {
+    margin-top: 50px;
     font-size: 14px;
-    color: #333;
+    color: black;
     text-align: left;
-    margin: 80px 20px;
     line-height: 1.5;
-    max-width: 75%;
+    width: 85%;
+    max-width: 1000px;
   }
   
+  .network-animation {
+    width: 50px;
+  }

@@ -5,7 +5,7 @@ import './pages.css'
 const IPInfoPage = () => {
     return (
         <div>
-            <h4 className="page-title">IP Information Page</h4>            
+            <h4 className="page-title">WHOIS Search</h4>            
             <div>
                 <IPInfoComponent />
             </div>

@@ -1,9 +1,11 @@
+
+
 .home-container {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #333;
+  color: black;
   text-align: center;
   transition: height 0.5s; 
   max-width: 100%; 

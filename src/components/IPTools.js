@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import InformationIcon from '../images/information.png';
-import DecimalIcon from '../images/123.png';
+import PortIcon from '../images/port.png';
 
 import './IPTools.css';
 
@@ -17,20 +17,10 @@ const IPToolsBox = () => {
             <span className="text">WHOIS Search</span>
           </div>
         </Link>
-        <Link to="/IP-decimal-page" className="tool-item">
-        <div className="tool-content">
-            <img src={DecimalIcon} alt="Information Icon" className="icon" /> 
-            <span className="text">IP to Decimal</span>
-          </div>
-        </Link>
         <Link to="/port-scan-page" className="tool-item">
           <div className="tool-content">
+            <img src={PortIcon} alt="Port Icon" className="icon2" /> 
             Port Scanner
-          </div>
-        </Link>
-        <Link to="/" className="tool-item">
-          <div className="tool-content">
-            IP tool
           </div>
         </Link>
       </div>

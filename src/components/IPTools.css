@@ -1,64 +1,71 @@
 .ip-tools-box {
-    background-color: rgba(255, 255, 255, 0.8); 
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    border-radius: 25px;
-    padding: 20px;
-    margin-bottom: 30px;
-    margin-top: 10px;
-    width: 85%;
-    max-width: 800px;
-  }
-  
-  .ip-tools-box h4 {
-    color: #333;
-  }
-  
-  .ip-tools-box p {
-    color: #666;
-    font-size: 14px;
+  background-color: #f2f6f9;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border-radius: 25px;
+  padding: 20px;
+  margin-bottom: 30px;
+  margin-top: 50px;
+  width: 85%;
+  max-width: 800px;
 }
 
-  .tool-container {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: space-between; 
-  }
+.ip-tools-box h4 {
+  color: #333;
+}
 
-  .tool-item {
-    flex: 0 0 calc(15% - 20px); 
-    margin: 10px;
+.ip-tools-box p {
+  color: #666;
+  font-size: 14px;
+}
 
-    background: #3498db;
-    background-image: linear-gradient(to bottom, #3498db, #2980b9);
+.tool-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* You might want to adjust this if boxes seem too spread out */
+}
 
-    border-radius: 15px;
-    padding: 25px;
-    text-align: center; 
-    transition: box-shadow 0.2s ease, transform 0.1s ease;
-    text-decoration: none;
-  }
-  
-    .tool-item:hover {
-      box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7);
-      transform: translateY(-3px);
-    }
+.tool-item {
+  flex: 1 0 calc(33% - 10px); /* Adjust for 3 items per row with reduced margin */
+  margin: 5px; /* Reduced margin */
 
-    .tool-content {
-      display: flex;
-      align-items: center;
-      color: #fff;
-      font-size: 14px;
-      font-weight: bold;
-    }
-    
-    .icon {
-      width: 25px;
-      margin-right: 5px;
-      filter: invert(100%);
-    }
-    
-    .text {
-      flex-grow: 1; /* Text fills remaining space */
-    }
-    
+  background: #3498db;
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
 
+  border-radius: 15px;
+  height: 120px; /* Set a fixed height for square boxes */
+  display: flex; /* Added for vertical center alignment of content */
+  align-items: center; /* Align items vertically */
+  justify-content: center; /* Align items horizontally */
+  text-align: center;
+  transition: box-shadow 0.2s ease, transform 0.1s ease;
+  text-decoration: none;
+}
+
+.tool-item:hover {
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7);
+  transform: translateY(-3px);
+}
+
+.tool-content {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.icon {
+  width: 25px;
+  margin-right: 5px;
+  filter: invert(100%);
+}
+
+.icon2 {
+  width: 45px;
+  margin-right: 5px;
+  filter: invert(100%);
+}
+
+.text {
+  flex-grow: 1; /* Text fills remaining space */
+}
