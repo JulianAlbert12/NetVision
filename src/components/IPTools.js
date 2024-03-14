@@ -8,8 +8,8 @@ import './IPTools.css';
 const IPToolsBox = () => {
   return (
     <div className="ip-tools-box">
-      <h4>IP Tools</h4>
-      <p>This section provides various tools for analyzing and managing IP addresses.</p>
+      <h4>Tools</h4>
+      <p>This section provides various two tools for analyzing and managing IP addresses.</p>
       <div className="tool-container">
         <Link to="/ip-info-page" className="tool-item">
           <div className="tool-content">

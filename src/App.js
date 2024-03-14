@@ -11,6 +11,7 @@ import PortScan from './pages/port-scan-page';
 import PortInfo from './components/PortInfo';
 import WHOISinfo from './components/WHOISinfo';
 import ScanImg from './components/ScanImg';
+import WHoImg from './components/WhoImg';
 
 import './App.css';
 
@@ -29,6 +30,7 @@ function App() {
             <PortInfo />
             <ScanImg />
             <WHOISinfo />
+            <WHoImg />
             </>
             } />
             <Route path="/about" element={<About />} />

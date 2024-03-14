@@ -3,6 +3,7 @@ import PortScanner from '../components/ToolComponents/Port-Scan-component';
 import FaqItem from '../components/FaqItem';
 import '../components/FaqItem.css';
 import './pages.css';
+import IPToolsBox from '../components/IPTools'
 import TimeoutImage from '../images/timeout.jpg';
 
 
@@ -97,6 +98,9 @@ const PortScanPage = () => {
             {faqs.map((faq, index) => (
                 <FaqItem key={index} question={faq.question} answer={faq.answer} />
             ))}
+        <div className="ip-tools-box-center">
+        <IPToolsBox />
+        </div>
         </div>
     );
 };

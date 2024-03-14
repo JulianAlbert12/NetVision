@@ -10,7 +10,7 @@
 }
 
 .ip-tools-box h4 {
-  color: #333;
+  color: black;
 }
 
 .ip-tools-box p {
@@ -32,7 +32,7 @@
   background-image: linear-gradient(to bottom, #3498db, #2980b9);
 
   border-radius: 15px;
-  height: 120px; /* Set a fixed height for square boxes */
+  height: 100px; /* Set a fixed height for square boxes */
   display: flex; /* Added for vertical center alignment of content */
   align-items: center; /* Align items vertically */
   justify-content: center; /* Align items horizontally */

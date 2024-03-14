@@ -1,9 +1,11 @@
 .input-container {
   display: flex;
+  justify-content: center; /* Horizontally center items */
   align-items: center;
-  border-radius:5px;
-
+  border-radius: 5px;
+  margin-bottom: 50px;
 }
+
 
 .input-container input {
   flex: 1;
@@ -44,7 +46,6 @@
 
 
 .ip-info-container {
-  background-color: rgba(255, 255, 255, 0.8); /* Set background color with transparency */
   margin: 40px auto;
   font-size: 0.9rem; /* Adjusted font size */
   max-width: 80%; /* Adjusted maximum width */
@@ -58,6 +59,9 @@
   vertical-align: top; /* Align columns to the top */
   padding: 30px; /* Adjusted padding */
   margin-bottom: 20px;
+  background-color: #f2f6f9; 
+  max-width: 1000px;
+
 }
 
 .ip-info-chart {

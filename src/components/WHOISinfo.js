@@ -31,7 +31,7 @@ const WHOISinfo = () => {
       }, []);
 
   return (
-    <Link to="/port-scan-page" className={`port-box ${isBoxVisible ? 'visible' : ''}`}>
+    <Link to="/ip-info-page" className={`port-box ${isBoxVisible ? 'visible' : ''}`}>
         <div className="Port-item">
           <img src={inspectImage} alt="Inspect" className={`inspect-image2 ${isImageVisible ? 'visible' : ''}`} />
         </div>
@@ -41,7 +41,7 @@ const WHOISinfo = () => {
             </span>
         </div>
         <p className="tool-description">
-            <span className="first-words">Uncover secrets behind domains.</span>
+            <span className="first-words">Uncover secrets behind IPs.</span>
             <p>Reveal digital footprints and unlock valuable insights at your fingertips.
             Learn more about the infrastructure and ownership details with just a few clicks.</p>
         </p>
