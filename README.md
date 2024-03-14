@@ -28,8 +28,6 @@ Welcome to MyProject! This project is aimed at [briefly describe the purpose or 
 - Useful for cybersecurity analysis and intellectual property management.
 
 ## Installation
-
-[Provide instructions on how to install your project. Include any prerequisites and step-by-step installation guide.]
 1. Clone the repository to your local machine:
 ```
 git clone https://github.com/JulianAlbert12/NetVision
@@ -40,11 +38,13 @@ cd NetVision
 ```
 3. Install dependencies:
 ```
-npm install
-```
-```
 npm install react-scripts
 ```
+3. Run project:
+```
+npm start
+```
+
 ## Usage
 ![Screenshot](https://github.com/JulianAlbert12/NetVision/blob/main/src/images/Scanresult.png)
 [Explain how to use your project. Provide examples, code snippets, or screenshots to demonstrate its functionality.]
