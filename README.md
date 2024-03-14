@@ -18,11 +18,15 @@ Welcome to MyProject! This project is aimed at [briefly describe the purpose or 
 ## Features
 
 - [List the main features of your project. Highlight what makes it unique or useful.]
+  
 
 ## Installation
 
 [Provide instructions on how to install your project. Include any prerequisites and step-by-step installation guide.]
-
+1. Clone the repository to your local machine:
+  - git clone https://github.com/JulianAlbert12/NetVision
+2. Navigate to the project directory:
+  - cd NetVision
 ## Usage
 
 [Explain how to use your project. Provide examples, code snippets, or screenshots to demonstrate its functionality.]
