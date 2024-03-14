@@ -18,17 +18,36 @@ Welcome to MyProject! This project is aimed at [briefly describe the purpose or 
 ## Features
 
 - [List the main features of your project. Highlight what makes it unique or useful.]
-  
+  #### Port Scanner
+- Quickly identifies open ports on a target system.
+- Essential for network security assessment.
+- Helps in identifying potential vulnerabilities.
+
+#### WHOIS Search
+- Retrieves domain registration and availability information.
+- Provides details on domain ownership and registrar.
+- Useful for cybersecurity analysis and intellectual property management.
 
 ## Installation
 
 [Provide instructions on how to install your project. Include any prerequisites and step-by-step installation guide.]
 1. Clone the repository to your local machine:
-  - git clone https://github.com/JulianAlbert12/NetVision
+```
+git clone https://github.com/JulianAlbert12/NetVision
+```
 2. Navigate to the project directory:
-  - cd NetVision
+```
+cd NetVision
+```
+3. Install dependencies:
+```
+npm install
+```
+```
+npm install react-scripts
+```
 ## Usage
-
+![Screenshot](https://github.com/JulianAlbert12/NetVision/blob/main/src/images/Scanresult.png)
 [Explain how to use your project. Provide examples, code snippets, or screenshots to demonstrate its functionality.]
 
 ## Contributing
