@@ -17,8 +17,7 @@ Welcome to MyProject! This project is aimed at [briefly describe the purpose or 
 
 ## Features
 
-- [List the main features of your project. Highlight what makes it unique or useful.]
-  #### Port Scanner
+#### Port Scanner
 - Quickly identifies open ports on a target system.
 - Essential for network security assessment.
 - Helps in identifying potential vulnerabilities.
