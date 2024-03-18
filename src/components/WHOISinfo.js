@@ -5,7 +5,7 @@ import './PortInfo.css';
 
 const WHOISinfo = () => {
     const [isImageVisible, setIsImageVisible] = useState(false);
-    const [isBoxVisible, setIsBoxVisible] = useState(false);
+    const [isBoxVisible] = useState(false);
 
     useEffect(() => {
         const observer = new IntersectionObserver(

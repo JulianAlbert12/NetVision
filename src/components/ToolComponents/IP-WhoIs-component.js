@@ -7,8 +7,8 @@ const IPInfoComponent = () => {
     const [ipInfo, setIpInfo] = useState(null);
     const [loading, setLoading] = useState(false);
     const [userAgent, setUserAgent] = useState('');
-    const [operatingSystem, setOperatingSystem] = useState('');
-    const [browser, setBrowser] = useState('');
+    const [setOperatingSystem] = useState('');
+    const [setBrowser] = useState('');
     const [userInputIP, setUserInputIP] = useState('');
     const [userIP, setUserIP] = useState('');
 
