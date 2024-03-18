@@ -40,18 +40,40 @@ cd NetVision
 ```
 npm install react-scripts
 ```
-3. Run project:
+4. Run the flask server:
+```
+cd src/backend/
+```
+```
+python3 app.py
+```
+3. On a separate terminal, run project:
 ```
 npm start
 ```
 
 ## Usage
+The tools provided in this project comes with detailed instructions on its page to help you run the tool effectively. Simply navigate to the respective tool's page to find step-by-step guidance on how to use it.\
+
+**TCP Scanner**\
+When following the instructions your input should look like this image below. If you get a red text error, restart the flask server. Any incorrect IP or URL will have a dedicated error message on the screen.
+![Screenshot](https://github.com/JulianAlbert12/NetVision/blob/main/src/images/TCPinputSS.png)
+
+
 ![Screenshot](https://github.com/JulianAlbert12/NetVision/blob/main/src/images/Scanresult.png)
 [Explain how to use your project. Provide examples, code snippets, or screenshots to demonstrate its functionality.]
 
-## Contributing
+## FAQ 
+**Can I utilize this tool to scan websites like Google or others without proper authorization?**\
+_No, using this tool to scan websites without proper authorization is illegal and unethical. The tool is provided under a free license, but it's imperative for users to comply with all applicable laws and ethical standards. The creator strongly advises against any unauthorized or unethical use of the tool. Users are responsible for ensuring they have the necessary permissions to conduct scans. Unauthorized use may result in legal consequences and is contrary to the intended use of the tool._
 
-[Encourage others to contribute to your project. Provide guidelines for contributing, such as how to report bugs, submit feature requests, or make pull requests.]
+**Is this tool compatible with all operating systems?**\
+_Yes, this tool is designed to be compatible with most operating systems. It is built using technologies that are platform-independent, allowing it to run on Windows, macOS, and Linux-based systems. However, please note that certain features or functionalities may vary depending on the operating system environment._
+
+
+
+
+
 
 ## License
 
