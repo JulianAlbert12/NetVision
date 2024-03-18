@@ -8,14 +8,25 @@ Welcome to MyProject! This project is aimed at [briefly describe the purpose or 
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- [FAQ](#faq)
 
 ## Introduction
 
 [Provide a brief introduction to your project. Describe what it does, why it exists, and who it's for.]
 
 ## Features
+
+**Port Scanner**\
+Quick Identification: Instantly identifies open ports on a target system, providing essential information for network security assessment.
+Vulnerability Detection: Helps in the detection of potential vulnerabilities by highlighting open ports that could be exploited by attackers.
+User-Friendly Interface: Offers a user-friendly interface for easy configuration and execution of port scanning operations.
+Comprehensive Reporting: Generates comprehensive reports detailing the discovered open ports, aiding in informed decision-making for network security measures.
+
+**WHOIS Search**\
+Domain Information Retrieval: Retrieves detailed domain registration and availability information, including ownership details and registrar information.
+Cybersecurity Analysis: Facilitates cybersecurity analysis by providing insights into domain ownership and historical registration data.
+Intellectual Property Management: Assists in intellectual property management by offering tools to monitor domain registrations and detect unauthorized use of trademarks or brand names.
+Customizable Queries: Allows users to customize WHOIS queries to retrieve specific domain information tailored to their requirements.
 
 #### Port Scanner
 - Quickly identifies open ports on a target system.
@@ -57,11 +68,11 @@ The tools provided in this project comes with detailed instructions on its page 
 
 **TCP Scanner**\
 When following the instructions your input should look like this image below. If you get a red text error, restart the flask server. Any incorrect IP or URL will have a dedicated error message on the screen.
+Once you fill out the inputs you should see a loading icon like this:
 ![Screenshot](https://github.com/JulianAlbert12/NetVision/blob/main/src/images/TCPinputSS.png)
 
-
-![Screenshot](https://github.com/JulianAlbert12/NetVision/blob/main/src/images/Scanresult.png)
-[Explain how to use your project. Provide examples, code snippets, or screenshots to demonstrate its functionality.]
+Here is an output of the findings:\
+![Screenshot](https://github.com/JulianAlbert12/NetVision/blob/main/src/images/TCPoutput.png)
 
 ## FAQ 
 **Can I utilize this tool to scan websites like Google or others without proper authorization?**\
@@ -70,12 +81,4 @@ _No, using this tool to scan websites without proper authorization is illegal an
 **Is this tool compatible with all operating systems?**\
 _Yes, this tool is designed to be compatible with most operating systems. It is built using technologies that are platform-independent, allowing it to run on Windows, macOS, and Linux-based systems. However, please note that certain features or functionalities may vary depending on the operating system environment._
 
-
-
-
-
-
-## License
-
-[Specify the license under which your project is distributed. Choose a license that suits your project's needs and goals.]
 
