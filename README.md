@@ -12,21 +12,9 @@ Welcome to MyProject! This project is aimed at [briefly describe the purpose or 
 
 ## Introduction
 
-[Provide a brief introduction to your project. Describe what it does, why it exists, and who it's for.]
+This project’s main goal is to create a web-based interface for conducting port scans on target IP addresses, using both a frontend developed using React.js and a backend API built with Flask. Our implementation utilizes Flask to create a web application that enables users to perform port scans through a simple HTTP API. The core of the application is a port scanning function written in Python, which leverages the socket module to establish connections to target ports. The Flask app exposes an endpoint /scan-ports, which accepts POST requests containing JSON data specifying the target IP address, port range, and timeout. Upon receiving a request, the app invokes the port scanning function, performs the scan, and returns the results as JSON.
 
 ## Features
-
-**Port Scanner**\
-Quick Identification: Instantly identifies open ports on a target system, providing essential information for network security assessment.
-Vulnerability Detection: Helps in the detection of potential vulnerabilities by highlighting open ports that could be exploited by attackers.
-User-Friendly Interface: Offers a user-friendly interface for easy configuration and execution of port scanning operations.
-Comprehensive Reporting: Generates comprehensive reports detailing the discovered open ports, aiding in informed decision-making for network security measures.
-
-**WHOIS Search**\
-Domain Information Retrieval: Retrieves detailed domain registration and availability information, including ownership details and registrar information.
-Cybersecurity Analysis: Facilitates cybersecurity analysis by providing insights into domain ownership and historical registration data.
-Intellectual Property Management: Assists in intellectual property management by offering tools to monitor domain registrations and detect unauthorized use of trademarks or brand names.
-Customizable Queries: Allows users to customize WHOIS queries to retrieve specific domain information tailored to their requirements.
 
 #### Port Scanner
 - Quickly identifies open ports on a target system.
