@@ -1,7 +1,5 @@
 # MyProject
 
-Welcome to MyProject! This project is aimed at [briefly describe the purpose or goal of your project].
-
 ## Table of Contents
 
 - [Introduction](#introduction)
